@@ -1,130 +1,234 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agência Criativa Web</title>
 
-    <!-- Link do CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-    <!-- Cabeçalho -->
-    <header>
-        <div class="logo">Agência Criativa Web</div>
+    <!-- Header -->
+    <header class="header">
 
-        <nav>
-            <ul class="menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#servicos">Serviços</a></li>
-                <li><a href="#depoimentos">Depoimentos</a></li>
-                <li><a href="#contato">Contato</a></li>
+        <div class="header__logo">
+            Agência Criativa Web
+        </div>
+
+        <nav class="nav">
+            <ul class="nav__list">
+
+                <li class="nav__item">
+                    <a href="#home" class="nav__link">Home</a>
+                </li>
+
+                <li class="nav__item">
+                    <a href="#sobre" class="nav__link">Sobre</a>
+                </li>
+
+                <li class="nav__item">
+                    <a href="#servicos" class="nav__link">Serviços</a>
+                </li>
+
+                <li class="nav__item">
+                    <a href="#depoimentos" class="nav__link">Depoimentos</a>
+                </li>
+
+                <li class="nav__item">
+                    <a href="#contato" class="nav__link">Contato</a>
+                </li>
+
             </ul>
         </nav>
+
     </header>
 
-    <!-- Home -->
-    <section id="home" class="banner">
-        <div class="banner-texto">
-            <h1>Transformamos ideias em experiências digitais</h1>
-            <p>Design moderno, criatividade e inovação para sua marca crescer.</p>
-            <a href="#contato" class="btn">Fale Conosco</a>
+    <!-- Hero -->
+    <section id="home" class="hero">
+
+        <div class="hero__content">
+
+            <h1 class="hero__title">
+                Transformamos ideias em experiências digitais
+            </h1>
+
+            <p class="hero__description">
+                Design moderno, criatividade e inovação para sua marca crescer.
+            </p>
+
+            <a href="#contato" class="button button--primary">
+                Fale Conosco
+            </a>
+
         </div>
+
     </section>
 
     <!-- Sobre -->
-    <section id="sobre" class="sobre">
-        <h2>Sobre Nós</h2>
+    <section id="sobre" class="section about">
 
-        <p>
+        <h2 class="section__title">
+            Sobre Nós
+        </h2>
+
+        <p class="about__text">
             Somos uma agência especializada em design digital, branding e
             desenvolvimento web. Nosso objetivo é criar experiências visuais
             incríveis que conectem marcas e pessoas.
         </p>
+
     </section>
 
     <!-- Serviços -->
-    <section id="servicos" class="servicos">
-        <h2>Nossos Serviços</h2>
+    <section id="servicos" class="section services">
 
-        <div class="grid-servicos">
+        <h2 class="section__title">
+            Nossos Serviços
+        </h2>
 
-            <div class="card">
-                <h3>Design Gráfico</h3>
-                <p>Criação de artes modernas e profissionais.</p>
-            </div>
+        <div class="services__grid">
 
-            <div class="card">
-                <h3>Desenvolvimento Web</h3>
-                <p>Sites responsivos e otimizados para performance.</p>
-            </div>
+            <article class="card service-card">
+                <h3 class="service-card__title">Design Gráfico</h3>
+                <p class="service-card__text">
+                    Criação de artes modernas e profissionais.
+                </p>
+            </article>
 
-            <div class="card">
-                <h3>Branding</h3>
-                <p>Construção de identidade visual para marcas.</p>
-            </div>
+            <article class="card service-card">
+                <h3 class="service-card__title">Desenvolvimento Web</h3>
+                <p class="service-card__text">
+                    Sites responsivos e otimizados para performance.
+                </p>
+            </article>
 
-            <div class="card">
-                <h3>Marketing Digital</h3>
-                <p>Estratégias digitais para aumentar sua presença online.</p>
-            </div>
+            <article class="card service-card">
+                <h3 class="service-card__title">Branding</h3>
+                <p class="service-card__text">
+                    Construção de identidade visual para marcas.
+                </p>
+            </article>
+
+            <article class="card service-card">
+                <h3 class="service-card__title">Marketing Digital</h3>
+                <p class="service-card__text">
+                    Estratégias digitais para aumentar sua presença online.
+                </p>
+            </article>
 
         </div>
+
     </section>
 
     <!-- Depoimentos -->
-    <section id="depoimentos" class="depoimentos">
-        <h2>O que nossos clientes dizem</h2>
+    <section id="depoimentos" class="section testimonials">
 
-        <div class="cards-depoimentos">
+        <h2 class="section__title">
+            O que nossos clientes dizem
+        </h2>
 
-            <div class="depoimento">
-                <p>"Equipe incrível! Nosso site ficou moderno e profissional."</p>
-                <h4>- Mariana Silva</h4>
-            </div>
+        <div class="testimonials__list">
 
-            <div class="depoimento">
-                <p>"Excelente atendimento e resultados acima do esperado."</p>
-                <h4>- João Pereira</h4>
-            </div>
+            <article class="card testimonial-card">
 
-            <div class="depoimento">
-                <p>"A identidade visual da minha empresa ficou perfeita."</p>
-                <h4>- Carla Mendes</h4>
-            </div>
+                <p class="testimonial-card__text">
+                    "Equipe incrível! Nosso site ficou moderno e profissional."
+                </p>
+
+                <h4 class="testimonial-card__author">
+                    - Mariana Silva
+                </h4>
+
+            </article>
+
+            <article class="card testimonial-card">
+
+                <p class="testimonial-card__text">
+                    "Excelente atendimento e resultados acima do esperado."
+                </p>
+
+                <h4 class="testimonial-card__author">
+                    - João Pereira
+                </h4>
+
+            </article>
+
+            <article class="card testimonial-card">
+
+                <p class="testimonial-card__text">
+                    "A identidade visual da minha empresa ficou perfeita."
+                </p>
+
+                <h4 class="testimonial-card__author">
+                    - Carla Mendes
+                </h4>
+
+            </article>
 
         </div>
+
     </section>
 
     <!-- Contato -->
-    <section id="contato" class="contato">
-        <h2>Contato</h2>
+    <section id="contato" class="section contact">
 
-        <div class="info-contato">
+        <h2 class="section__title">
+            Contato
+        </h2>
+
+        <div class="contact__info">
+
             <p><strong>Endereço:</strong> Rua Criativa, 100 - São Paulo</p>
             <p><strong>Telefone:</strong> (11) 99999-9999</p>
             <p><strong>E-mail:</strong> contato@agenciacriativa.com</p>
+
         </div>
 
-        <!-- Formulário -->
-        <form class="formulario">
-            <input type="text" placeholder="Seu nome" required>
+        <form class="contact__form">
 
-            <input type="email" placeholder="Seu e-mail" required>
+            <input
+                type="text"
+                class="contact__input"
+                placeholder="Seu nome"
+                required
+            >
 
-            <textarea placeholder="Sua mensagem" required></textarea>
+            <input
+                type="email"
+                class="contact__input"
+                placeholder="Seu e-mail"
+                required
+            >
 
-            <button type="submit">Enviar</button>
+            <textarea
+                class="contact__textarea"
+                placeholder="Sua mensagem"
+                required
+            ></textarea>
+
+            <button
+                type="submit"
+                class="contact__button"
+            >
+                Enviar
+            </button>
+
         </form>
+
     </section>
 
-    <!-- Rodapé -->
-    <footer>
-        <p>© 2026 Agência Criativa Web - Todos os direitos reservados.</p>
+    <!-- Footer -->
+    <footer class="footer">
+
+        <p class="footer__text">
+            © 2026 Agência Criativa Web - Todos os direitos reservados.
+        </p>
+
     </footer>
 
 </body>
+
 </html>

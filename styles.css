@@ -1,56 +1,133 @@
-/* RESET */
+/* ====================================
+   RESET
+==================================== */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* CONFIGURAÇÕES GERAIS */
+/* ====================================
+   VARIÁVEIS
+==================================== */
+
+:root {
+    --color-primary: #38bdf8;
+    --color-primary-hover: #0ea5e9;
+
+    --color-dark: #111827;
+    --color-dark-hover: #1f2937;
+
+    --color-white: #ffffff;
+    --color-background: #f4f4f4;
+    --color-text: #333333;
+
+    --radius-small: 5px;
+    --radius-medium: 8px;
+    --radius-large: 10px;
+
+    --shadow-default: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ====================================
+   BASE
+==================================== */
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: var(--color-background);
+    color: var(--color-text);
 }
 
-/* CABEÇALHO */
-header {
-    background-color: #111827;
-    color: white;
+.section {
+    padding: 5rem 10%;
+}
+
+.section__title {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+/* ====================================
+   COMPONENTES
+==================================== */
+
+.button {
+    display: inline-block;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    border-radius: var(--radius-medium);
+    transition: 0.3s;
+}
+
+.button--primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.button--primary:hover {
+    background-color: var(--color-primary-hover);
+}
+
+.card {
+    background-color: var(--color-white);
+    padding: 2rem;
+    border-radius: var(--radius-large);
+    box-shadow: var(--shadow-default);
+}
+
+/* ====================================
+   HEADER
+==================================== */
+
+.header {
+    background-color: var(--color-dark);
+    color: var(--color-white);
 
     display: flex;
     justify-content: space-between;
     align-items: center;
 
     padding: 1rem 5%;
+
     position: sticky;
     top: 0;
+    z-index: 1000;
 }
 
-.logo {
+.header__logo {
     font-size: 1.5rem;
     font-weight: bold;
 }
 
-/* MENU */
-.menu {
+/* ====================================
+   NAVEGAÇÃO
+==================================== */
+
+.nav__list {
     display: flex;
-    list-style: none;
     gap: 2rem;
+    list-style: none;
 }
 
-.menu a {
+.nav__link {
     text-decoration: none;
-    color: white;
+    color: var(--color-white);
     transition: 0.3s;
 }
 
-.menu a:hover {
-    color: #38bdf8;
+.nav__link:hover {
+    color: var(--color-primary);
 }
 
-/* BANNER */
-.banner {
+/* ====================================
+   HERO
+==================================== */
+
+.hero {
     height: 90vh;
 
     display: flex;
@@ -58,182 +135,166 @@ header {
     align-items: center;
 
     text-align: center;
-
-    background: linear-gradient(
-        rgba(0,0,0,0.6),
-        rgba(0,0,0,0.6)
-    ),
-    url("https://images.unsplash.com/photo-1498050108023-c5249f4df085")
-    center/cover no-repeat;
-
-    color: white;
+    color: var(--color-white);
 
     padding: 2rem;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.6),
+            rgba(0, 0, 0, 0.6)
+        ),
+        url("https://images.unsplash.com/photo-1498050108023-c5249f4df085")
+        center/cover no-repeat;
 }
 
-.banner h1 {
+.hero__title {
     font-size: 3rem;
     margin-bottom: 1rem;
 }
 
-.banner p {
+.hero__description {
     font-size: 1.2rem;
     margin-bottom: 2rem;
 }
 
-/* BOTÃO */
-.btn {
-    background-color: #38bdf8;
-    color: white;
+/* ====================================
+   SOBRE
+==================================== */
 
-    padding: 1rem 2rem;
-
-    border-radius: 8px;
-    text-decoration: none;
-
-    transition: 0.3s;
-}
-
-.btn:hover {
-    background-color: #0ea5e9;
-}
-
-/* SEÇÕES */
-section {
-    padding: 5rem 10%;
-}
-
-section h2 {
-    text-align: center;
-    margin-bottom: 2rem;
-    font-size: 2rem;
-}
-
-/* SOBRE */
-.sobre p {
-    text-align: center;
+.about__text {
     max-width: 800px;
-    margin: auto;
+    margin: 0 auto;
+    text-align: center;
     font-size: 1.1rem;
 }
 
-/* SERVIÇOS */
-.grid-servicos {
-    display: grid;
+/* ====================================
+   SERVIÇOS
+==================================== */
 
+.services__grid {
+    display: grid;
     grid-template-columns:
         repeat(auto-fit, minmax(250px, 1fr));
-
     gap: 2rem;
 }
 
-.card {
-    background-color: white;
-
-    padding: 2rem;
-
-    border-radius: 10px;
-
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-
-    transition: 0.3s;
+.service-card {
+    transition: transform 0.3s;
 }
 
-.card:hover {
+.service-card:hover {
     transform: translateY(-5px);
 }
 
-/* DEPOIMENTOS */
-.cards-depoimentos {
+.service-card__title {
+    margin-bottom: 1rem;
+}
+
+/* ====================================
+   DEPOIMENTOS
+==================================== */
+
+.testimonials__list {
     display: flex;
-    gap: 2rem;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 2rem;
 }
 
-.depoimento {
-    background-color: white;
-
-    padding: 2rem;
-
+.testimonial-card {
     max-width: 300px;
-
-    border-left: 5px solid #38bdf8;
-
-    border-radius: 10px;
+    border-left: 5px solid var(--color-primary);
 }
 
-/* CONTATO */
-.formulario {
-    display: flex;
-    flex-direction: column;
+.testimonial-card__author {
+    margin-top: 1rem;
+}
 
-    gap: 1rem;
+/* ====================================
+   CONTATO
+==================================== */
 
+.contact__info {
+    text-align: center;
+}
+
+.contact__form {
     max-width: 600px;
     margin: 2rem auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
-.formulario input,
-.formulario textarea {
+.contact__input,
+.contact__textarea {
     padding: 1rem;
-
-    border: 1px solid #ccc;
-
-    border-radius: 5px;
-
+    border: 1px solid #cccccc;
+    border-radius: var(--radius-small);
     font-size: 1rem;
 }
 
-.formulario textarea {
+.contact__textarea {
     resize: none;
     height: 150px;
 }
 
-.formulario button {
+.contact__button {
     padding: 1rem;
-
-    background-color: #111827;
-    color: white;
-
     border: none;
-    border-radius: 5px;
+    border-radius: var(--radius-small);
+
+    background-color: var(--color-dark);
+    color: var(--color-white);
 
     cursor: pointer;
+    transition: 0.3s;
 }
 
-.formulario button:hover {
-    background-color: #1f2937;
+.contact__button:hover {
+    background-color: var(--color-dark-hover);
 }
 
-/* RODAPÉ */
-footer {
-    background-color: #111827;
-    color: white;
+/* ====================================
+   FOOTER
+==================================== */
+
+.footer {
+    background-color: var(--color-dark);
+    color: var(--color-white);
 
     text-align: center;
-
     padding: 1rem;
 }
 
-/* RESPONSIVIDADE */
+/* ====================================
+   RESPONSIVIDADE
+==================================== */
+
 @media (max-width: 768px) {
 
-    header {
+    .header {
         flex-direction: column;
         gap: 1rem;
     }
 
-    .menu {
+    .nav__list {
         flex-direction: column;
         align-items: center;
     }
 
-    .banner h1 {
+    .hero__title {
         font-size: 2rem;
     }
 
-    .banner p {
+    .hero__description {
         font-size: 1rem;
+    }
+
+    .section {
+        padding: 4rem 8%;
     }
 }
