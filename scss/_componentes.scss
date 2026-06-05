@@ -1,0 +1,33 @@
+@use "variaveis" as *;
+
+// BOTÕES
+.button {
+    display: inline-block;
+    text-decoration: none;
+
+    padding: 1rem 2rem;
+
+    border-radius: $radius-medium;
+
+    transition: 0.3s;
+
+    &--primary {
+        background-color: $color-primary;
+        color: $color-white;
+
+        &:hover {
+            background-color: $color-primary-hover;
+        }
+    }
+}
+
+// CARDS
+.card {
+    background-color: $color-white;
+
+    padding: $spacing;
+
+    border-radius: $radius-large;
+
+    box-shadow: $shadow-default;
+}

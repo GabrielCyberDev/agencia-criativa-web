@@ -1,0 +1,27 @@
+@use "variaveis" as *;
+
+// FLEX CENTRALIZADO
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// BOTÃO PADRÃO
+@mixin button-base($bg-color) {
+    background-color: $bg-color;
+    color: $color-white;
+
+    border: none;
+    border-radius: $radius-medium;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+// RESPONSIVIDADE
+@mixin mobile {
+    @media (max-width: 768px) {
+        @content;
+    }
+}

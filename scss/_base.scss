@@ -1,0 +1,24 @@
+@use "variaveis" as *;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-main;
+    line-height: 1.6;
+    background-color: $color-background;
+    color: $color-text;
+}
+
+.section {
+    padding: $section-padding 10%;
+
+    &__title {
+        text-align: center;
+        margin-bottom: $spacing;
+        font-size: 2rem;
+    }
+}

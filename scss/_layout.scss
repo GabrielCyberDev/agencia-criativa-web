@@ -1,0 +1,220 @@
+@use "variaveis" as *;
+@use "mixins" as *;
+@use "sass:math"; 
+
+// HEADER
+.header {
+    background-color: $color-dark;
+    color: $color-white;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 1rem 5%;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    &__logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+}
+
+// NAV
+.nav {
+
+    &__list {
+        display: flex;
+        gap: $spacing;
+        list-style: none;
+    }
+
+    &__link {
+        text-decoration: none;
+        color: $color-white;
+        transition: 0.3s;
+
+        &:hover {
+            color: $color-primary;
+        }
+    }
+}
+
+// HERO
+.hero {
+    height: 90vh;
+
+    @include flex-center;
+
+    text-align: center;
+    color: $color-white;
+
+    padding: $spacing;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.6),
+            rgba(0, 0, 0, 0.6)
+        ),
+        url("https://images.unsplash.com/photo-1498050108023-c5249f4df085")
+        center/cover no-repeat;
+
+    &__title {
+        font-size: 3rem;
+        margin-bottom: math.div($spacing, 2);
+    }
+
+    &__description {
+        font-size: 1.2rem;
+        margin-bottom: $spacing;
+    }
+}
+
+// SOBRE
+.about {
+
+    &__text {
+        max-width: 800px;
+        margin: 0 auto;
+
+        text-align: center;
+        font-size: 1.1rem;
+    }
+}
+
+// SERVIÇOS
+.services {
+
+    &__grid {
+        display: grid;
+
+        grid-template-columns:
+            repeat(auto-fit, minmax(250px, 1fr));
+
+        gap: $spacing;
+    }
+}
+
+.service-card {
+
+    transition: transform 0.3s;
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+
+    &__title {
+        margin-bottom: math.div($spacing, 2);
+    }
+}
+
+// DEPOIMENTOS
+.testimonials {
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        gap: $spacing;
+    }
+}
+
+.testimonial-card {
+
+    max-width: 300px;
+
+    border-left: 5px solid $color-primary;
+
+    &__author {
+        margin-top: math.div($spacing, 2);
+    }
+}
+
+// CONTATO
+.contact {
+
+    &__info {
+        text-align: center;
+    }
+
+    &__form {
+        max-width: 600px;
+        margin: $spacing auto;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: math.div($spacing, 2);
+    }
+
+    &__input,
+    &__textarea {
+        padding: math.div($spacing, 2);
+
+        border: 1px solid #ccc;
+        border-radius: $radius-small;
+
+        font-size: 1rem;
+    }
+
+    &__textarea {
+        resize: none;
+        height: 150px;
+    }
+
+    &__button {
+
+        @include button-base($color-dark);
+
+        padding: math.div($spacing, 2);
+
+        &:hover {
+            background-color: $color-dark-hover;
+        }
+    }
+}
+
+// FOOTER
+.footer {
+    background-color: $color-dark;
+    color: $color-white;
+
+    text-align: center;
+    padding: math.div($spacing, 2);
+}
+
+// RESPONSIVIDADE
+@include mobile {
+
+    .header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav {
+
+        &__list {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    .hero {
+
+        &__title {
+            font-size: 2rem;
+        }
+
+        &__description {
+            font-size: 1rem;
+        }
+    }
+
+    .section {
+        padding: 4rem 8%;
+    }
+}
